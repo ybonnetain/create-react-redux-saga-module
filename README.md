@@ -1,4 +1,4 @@
-# create-react-redux-module
+# create-react-redux-saga-module
 
 Prompt to create registerable modules that can be combined together to create a complete React/Redux application.
 
@@ -13,7 +13,7 @@ Two modules types are available
 
 ## Install
 
-`npm i -g create-react-redux-module`
+`npm i -g create-react-redux-saga-module`
 
 Then run with `create-react-redux-saga-module`
 
