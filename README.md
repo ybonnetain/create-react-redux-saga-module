@@ -15,6 +15,8 @@ Two modules types are available
 
 `npm i -g create-react-redux-module`
 
+Then run with `create-react-redux-saga-module`
+
 ## Prerequisite
 
 Host project must provide the following dependencies

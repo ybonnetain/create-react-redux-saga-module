@@ -60,7 +60,7 @@ const run = () => {
       const moduleName = answers['module-name'];
       const moduleVersion = answers['module-version'];
 
-      const templatePath = `${modulesRoot}/create-react-redux-module/etc/templates/modules/${answers['module-type']}`;
+      const templatePath = `${modulesRoot}/create-react-redux-saga-module/etc/templates/modules/${answers['module-type']}`;
       const destination = `${pwd}/src/modules/${answers['module-group']}/${answers['module-name']}`;
       shell.mkdir('-p', destination);
 
@@ -73,9 +73,9 @@ const run = () => {
             
           let destination;
             if (answers['module-group']) {
-              destination = file.replace(`${modulesRoot}/create-react-redux-module/etc/templates/modules/${answers['module-type']}`, `${pwd}/src/modules/${answers['module-group']}/${answers['module-name']}`);
+              destination = file.replace(`${modulesRoot}/create-react-redux-saga-module/etc/templates/modules/${answers['module-type']}`, `${pwd}/src/modules/${answers['module-group']}/${answers['module-name']}`);
           } else {
-              destination = file.replace(`${modulesRoot}/create-react-redux-module/etc/templates/modules/${answers['module-type']}`, `${pwd}src/modules/${answers['module-name']}`);
+              destination = file.replace(`${modulesRoot}/create-react-redux-saga-module/etc/templates/modules/${answers['module-type']}`, `${pwd}src/modules/${answers['module-name']}`);
           }
           const stats = fs.statSync(file);
 
