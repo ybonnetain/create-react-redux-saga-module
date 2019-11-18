@@ -49,7 +49,7 @@ const QUESTIONS = [
 const run = () => {
 
   const pwdSpawnResult = spawn('pwd', []);
-  const pwd = pwdSpawnResult.stdout.toString();
+  const pwd = pwdSpawnResult.stdout.toString().replace('\n', '');
 
   inquirer.prompt(QUESTIONS)
     .then(answers => {
@@ -72,10 +72,11 @@ const run = () => {
             if (answers['module-group']) {
               destination = file.replace(`${modulesRoot}/create-react-redux-saga-module/etc/templates/modules/${answers['module-type']}`, `${pwd}/src/modules/${answers['module-group']}/${answers['module-name']}`);
           } else {
-              destination = file.replace(`${modulesRoot}/create-react-redux-saga-module/etc/templates/modules/${answers['module-type']}`, `${pwd}src/modules/${answers['module-name']}`);
+              destination = file.replace(`${modulesRoot}/create-react-redux-saga-module/etc/templates/modules/${answers['module-type']}`, `${pwd}/src/modules/${answers['module-name']}`);
           }
           const stats = fs.statSync(file);
 
+  console.log(destination)          
           if (stats.isDirectory()) {
             fs.mkdirSync(destination);
           }
