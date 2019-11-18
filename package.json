@@ -1,6 +1,6 @@
 {
   "name": "create-react-redux-saga-module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create React/Redux NPM modules from templates and bootstrap them together in a host project",
   "author": "Yann Bonnetain <yann.bonnetain@gmail.com>",
   "license": "MIT",

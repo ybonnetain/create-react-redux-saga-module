@@ -5,7 +5,9 @@ const path = require('path');
 const spawn = require('child_process').spawnSync;
 
 
-const CHOICES = fs.readdirSync(`./etc/templates/modules`);
+const modulesRootSpawnResult = spawn('npm', ['root', '-g']);
+const modulesRoot = modulesRootSpawnResult.stdout.toString().replace('\n', '');
+const CHOICES = fs.readdirSync(`${modulesRoot}/create-react-redux-saga-module/etc/templates/modules`);
 
 const QUESTIONS = [
   {
@@ -45,11 +47,6 @@ const QUESTIONS = [
 ];
 
 const run = () => {
-
-  // npm root -g
-  const modulesRootSpawnResult = spawn('npm', ['root', '-g']);
-  const modulesRoot = modulesRootSpawnResult.stdout.toString();
-  // console.log('Global modules directory ->', modulesRoot);
 
   const pwdSpawnResult = spawn('pwd', []);
   const pwd = pwdSpawnResult.stdout.toString();
