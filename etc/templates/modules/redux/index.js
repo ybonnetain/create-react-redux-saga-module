@@ -1,6 +1,7 @@
 // %%PACK_NAME%% - module index
 
 import { registerModuleReducer, registerModuleSaga } from 'redux-register-module';
+import { all, fork } from 'redux-saga/effects';
 import { STATE_KEY } from './constants';
 import { some } from './sagas';
 import reducers from './reducers';
